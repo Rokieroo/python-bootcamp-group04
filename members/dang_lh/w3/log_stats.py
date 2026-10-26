@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import Counter, defaultdict
 import math
 
 
@@ -11,9 +11,9 @@ def calculate_p95(latencies: list[float]) -> float:
 
 def analyse(pairs: list[tuple[str, float]]) -> dict:
     if not pairs:
-        return {"counts": dict(), "p95": {}, "slowest": None}
+        return {"counts": Counter(), "p95": {}, "slowest": None}
 
-    counts = dict()
+    counts = Counter()
     route_latencies = defaultdict(list)
 
     for route, latency in pairs:
