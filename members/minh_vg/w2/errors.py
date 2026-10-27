@@ -9,11 +9,13 @@ class InfeasiblePlan(Exception):
     """Required task effort exceeds the available hours."""
 
     def __init__(self, needed_h: float, available_h: float) -> None:
+        """Store required effort and available hours for reporting."""
         self.needed_h = needed_h
         self.available_h = available_h
         super().__init__(needed_h, available_h)
 
     def __str__(self) -> str:
+        """Explain the required and available hours to the caller."""
         return f"Plan needs {self.needed_h:g} h; only {self.available_h:g} h available"
 
 

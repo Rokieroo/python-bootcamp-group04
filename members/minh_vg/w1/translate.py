@@ -5,8 +5,13 @@ does not require explicit memory management. The sort is performed in-place
 by shifting elements, identical to the C++ algorithm.
 """
 
+from collections.abc import Iterable, Mapping, Sequence
+from typing import TypeVar
 
-def insertion_sort(a):
+Node = TypeVar("Node", int, str)
+
+
+def insertion_sort(a: list[int]) -> list[int]:
     """Sort a list of integers in-place using insertion sort and return it."""
     for i in range(1, len(a)):
         key = a[i]
@@ -19,7 +24,10 @@ def insertion_sort(a):
 
 
 # Keep the original graph traversal code for reference
-def build_graph(edges, directed=False, nodes=None):
+def build_graph(
+    edges: Iterable[tuple[Node, Node]], directed: bool = False,
+    nodes: Iterable[Node] | None = None,
+) -> dict[Node, list[Node]]:
     """Build sorted, duplicate-free adjacency lists, including isolated nodes."""
     neighbors = {node: set() for node in nodes or []}
     for source, target in edges:
@@ -30,7 +38,7 @@ def build_graph(edges, directed=False, nodes=None):
     return {node: sorted(adjacent) for node, adjacent in neighbors.items()}
 
 
-def dfs(graph, start):
+def dfs(graph: Mapping[Node, Sequence[Node]], start: Node) -> list[Node]:
     """Recursively visit reachable nodes, visiting smaller neighbors first."""
     if start not in graph:
         raise ValueError("start must be a node in the graph")
@@ -38,7 +46,8 @@ def dfs(graph, start):
     visited = set()
     order = []
 
-    def visit(node):
+    def visit(node: Node) -> None:
+        """Visit one unseen node and its reachable neighbors in sorted order."""
         visited.add(node)
         order.append(node)
         for neighbor in sorted(graph.get(node, [])):
@@ -49,7 +58,7 @@ def dfs(graph, start):
     return order
 
 
-def dfs_iterative(graph, start):
+def dfs_iterative(graph: Mapping[Node, Sequence[Node]], start: Node) -> list[Node]:
     """Match recursive DFS using a stack, without Python's recursion limit."""
     if start not in graph:
         raise ValueError("start must be a node in the graph")
