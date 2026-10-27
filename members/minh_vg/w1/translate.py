@@ -25,7 +25,8 @@ def insertion_sort(a: list[int]) -> list[int]:
 
 # Keep the original graph traversal code for reference
 def build_graph(
-    edges: Iterable[tuple[Node, Node]], directed: bool = False,
+    edges: Iterable[tuple[Node, Node]],
+    directed: bool = False,
     nodes: Iterable[Node] | None = None,
 ) -> dict[Node, list[Node]]:
     """Build sorted, duplicate-free adjacency lists, including isolated nodes."""

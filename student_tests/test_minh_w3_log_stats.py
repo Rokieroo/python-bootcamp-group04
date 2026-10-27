@@ -7,11 +7,13 @@ def test_route_statistics():
     """Grouping must preserve all observations and select highest p95."""
     from members.minh_vg.w3.log_stats import analyse
 
-    result = analyse(iter([("fee", 100), ("fee", 300), ("rag", 900),
-                           ("rag", 1100), ("fee", 200)]))
+    result = analyse(iter([("fee", 100), ("fee", 300), ("rag", 900), ("rag", 1100), ("fee", 200)]))
     assert isinstance(result["counts"], Counter)
-    assert result == {"counts": {"fee": 3, "rag": 2},
-                      "p95": {"fee": 300, "rag": 1100}, "slowest": "rag"}
+    assert result == {
+        "counts": {"fee": 3, "rag": 2},
+        "p95": {"fee": 300, "rag": 1100},
+        "slowest": "rag",
+    }
 
 
 def test_nearest_rank_percentile():
@@ -26,7 +28,9 @@ def test_singletons_and_ties():
     from members.minh_vg.w3.log_stats import analyse
 
     assert analyse([("z", 7), ("a", 7)]) == {
-        "counts": {"z": 1, "a": 1}, "p95": {"z": 7, "a": 7}, "slowest": "z",
+        "counts": {"z": 1, "a": 1},
+        "p95": {"z": 7, "a": 7},
+        "slowest": "z",
     }
 
 

@@ -31,7 +31,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     ranked = sorted(
-        tasks, key=lambda task: task.importance / max(1, task.days_left(today)), reverse=True,
+        tasks,
+        key=lambda task: task.importance / max(1, task.days_left(today)),
+        reverse=True,
     )
     remaining = args.hours
     lines = []

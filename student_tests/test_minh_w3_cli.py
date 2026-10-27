@@ -13,7 +13,10 @@ def run_cli(*args):
     """Invoke the package entry point from the repository root."""
     return subprocess.run(
         [sys.executable, "-m", "members.minh_vg.w3.cli", *map(str, args)],
-        cwd=ROOT, capture_output=True, text=True, check=False,
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
     )
 
 
@@ -80,8 +83,9 @@ def test_empty_task_list(tmp_path):
 def test_default_today_and_zero_effort(tmp_path):
     """Default dates work, zero-effort rows do not consume the budget."""
     path = tmp_path / "tasks.csv"
-    path.write_text("title,importance,effort_h,deadline\n"
-                    "Free,5,0,2026-01-01\nWork,4,3,2026-01-01\n")
+    path.write_text(
+        "title,importance,effort_h,deadline\nFree,5,0,2026-01-01\nWork,4,3,2026-01-01\n"
+    )
     result = run_cli(path, "--hours", "0.25")
     assert result.returncode == 0
     assert "Work: 0.25 h" in result.stdout
