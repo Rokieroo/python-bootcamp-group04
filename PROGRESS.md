@@ -4,7 +4,7 @@
 
 | Member | Issue | Branch / PR | Reviewer | Local verification | Estimated / actual student hours |
 |---|---|---|---|---|---|
-| MikaelVo639 (`minh_vg`) | [#48](https://github.com/Rokieroo/python-bootcamp-group04/issues/48) | `py/w3-MikaelVo639`; PR pending creation | hdang-207; human approval pending | W3: 3 passed; W1/W2/W3: 11 passed; CI student suite: 141 passed and 1,543 graph subtests; Ruff clean | Not supplied / not supplied |
+| MikaelVo639 (`minh_vg`) | [#48](https://github.com/Rokieroo/python-bootcamp-group04/issues/48) | [PR #57](https://github.com/Rokieroo/python-bootcamp-group04/pull/57), `py/w3-MikaelVo639` | hdang-207; review requested, human approval pending | W3: 3 passed; W1/W2/W3: 11 passed; CI student suite: 141 passed and 1,543 graph subtests; Ruff clean | Not supplied / not supplied |
 
 - W3-1 to W3-4 implemented, including 32 additional behavioral tests and missing
   annotations/docstrings in Minh's existing exercises.

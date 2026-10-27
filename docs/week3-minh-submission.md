@@ -1,7 +1,8 @@
 # Minh Week 3 submission
 
 Issue: [#48](https://github.com/Rokieroo/python-bootcamp-group04/issues/48).
-Branch: `py/w3-MikaelVo639`, based on main `3e2b326`.
+Submission: [PR #57](https://github.com/Rokieroo/python-bootcamp-group04/pull/57).
+Branch: `py/w3-MikaelVo639`, based on main `a7b2356`.
 Assigned reviewer: hdang-207. Human approval, merge and weekly tag are pending.
 
 ## Implementation
@@ -46,7 +47,7 @@ Tonight (2 h):
 ## Existing full-suite failures
 
 Both commands were run against this branch and a separate extracted snapshot
-of unchanged main `3e2b326`. Results reproduce on the baseline:
+of unchanged main `a7b2356`. Results reproduce on the baseline:
 
 - Default full pytest: five collection errors due to W2 packages sharing the
   import name `w2`: Man's `test_io_utils.py` and `tests_for_dat_vt.py`, Minh's
@@ -70,6 +71,9 @@ At the submission check the only open PR was Dat W3 (#55). Thang's W3 issue
 #46 and team issues #49-52 had no matching open PR. Minh's assigned review of
 Thang and suggested team reviews remain pending until those PRs exist.
 An AI code review of this branch does not substitute for hdang-207's approval.
+The independent AI review found no Critical or Important issues; the identified
+baseline-documentation correction was applied and verified against actual
+parent `a7b2356`. Reviewer hdang-207 was requested on PR #57.
 
 ## Reflection draft (W3-4)
 
