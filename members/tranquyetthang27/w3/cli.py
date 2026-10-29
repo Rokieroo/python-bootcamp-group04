@@ -14,48 +14,66 @@ def parse_date(date_str: str) -> date:
 def main():
     # 1. Setup argparse
     parser = argparse.ArgumentParser(description="Task analyzer command-line tool.")
-    
-    # Positional argument for the CSV file
     parser.add_argument("filename", type=str, help="Path to the tasks CSV file")
-    
-    # Optional arguments
     parser.add_argument("--hours", type=float, default=2.0, help="Target total hours for tonight")
-    parser.add_argument("--today", type=parse_date, default=date.today(), 
-                        help="Reference date in YYYY-MM-DD format (default: today)")
+    parser.add_argument("--today", type=parse_date, default=date.today(), help="Reference date")
     
     args = parser.parse_args()
     
-    # 2. Check if file exists using pathlib (as requested in study topics)
+    # 2. Check if file exists
     csv_path = Path(args.filename)
     if not csv_path.is_file():
         print(f"Error: The file '{args.filename}' does not exist.", file=sys.stderr)
         sys.exit(1)
         
-    # 3. Read and parse the CSV file (Simulating reuse of W2 logic)
+    # 3. Dynamic and Robust CSV Parsing
     tasks = []
     try:
         with open(csv_path, mode="r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
+            
             for row in reader:
-                # Expected CSV columns: task, due, hours
-                tasks.append({
-                    "name": row["task"],
-                    "due": row["due"],
-                    "hours": float(row["hours"])
-                })
+                # Dynamically locate the task name/title column
+                name = None
+                for key in ["task", "name", "title", "todo", "item"]:
+                    if key in row:
+                        name = row[key]
+                        break
+                if name is None and row:  # Fallback to the first column if no match found
+                    name = list(row.values())[0]
+                
+                # Dynamically locate the hours/duration column
+                hours = None
+                for key in ["hours", "hour", "duration", "time"]:
+                    if key in row:
+                        try:
+                            hours = float(row[key])
+                            break
+                        except ValueError:
+                            continue
+                if hours is None and row:  # Fallback to the last column if no match found
+                    try:
+                        hours = float(list(row.values())[-1])
+                    except ValueError:
+                        hours = 0.0
+
+                if name:
+                    tasks.append({
+                        "name": name,
+                        "hours": hours
+                    })
     except Exception as e:
         print(f"Error reading CSV file: {e}", file=sys.stderr)
         sys.exit(1)
 
-    # 4. Print the formatted output match the example
+    # 4. Print the formatted output
     print(f"Tonight ({args.hours:.1f} h):")
     
-    # Print tasks with dot padding for alignment
     for i, task in enumerate(tasks, start=1):
         name_part = f"  {i}. {task['name']} "
         hours_part = f" {task['hours']:.1f} h"
         
-        # Adjust total width (e.g., 30 chars) to dynamically fill with dots
+        # Dot padding up to 30 characters wide
         dotted_line = name_part.ljust(30, ".") + hours_part
         print(dotted_line)
 
