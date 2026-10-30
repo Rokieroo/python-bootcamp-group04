@@ -1,7 +1,7 @@
 """W1-1: Grade summary."""
 
 
-def summary(scores):
+def summary(scores: list[float]) -> dict[str, float]:
     """Compute min, max, mean, and median of a list of scores."""
     if not scores:
         raise ValueError("scores list cannot be empty")

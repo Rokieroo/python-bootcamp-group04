@@ -1,7 +1,7 @@
 """W1-5: Group timetable by day."""
 
 
-def by_day(items):
+def by_day(items: list[tuple[str, str]]) -> dict[str, list[str]]:
     """Group courses by day and sort them alphabetically within each day."""
     result = {}
     for course, day in items:

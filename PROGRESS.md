@@ -1,5 +1,10 @@
 # Python bootcamp progress
 
+## Week 3
+
+| Week | Member | Issue | PR | Reviewer | Local verification | Estimated hours | Actual hours |
+|---|---|---|---|---|---|---|---|
+| 3 | Rokieroo (`dat_vt`) | [#43](https://github.com/MorganConsort/python-bootcamp-group04/issues/43) | [#55](https://github.com/MorganConsort/python-bootcamp-group04/pull/55) | Review requested; approval pending | W3-1 `parse_due`, W3-2 `p95`/`analyse`, W3-3 CLI and W3-4 docstrings/type hints complete; instructor W1+W3 tests and Ruff pass | 2h | 2h30m |
 ## Minh Week 3 submission (2026-10-27)
 
 | Member | Issue | Branch / PR | Reviewer | Local verification | Estimated / actual student hours |

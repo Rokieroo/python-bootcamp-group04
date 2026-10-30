@@ -3,7 +3,7 @@
 import string
 
 
-def word_count(text):
+def word_count(text: str) -> dict[str, int]:
     """Count occurrences of each lowercase word, ignoring punctuation."""
     clean_text = text.translate(str.maketrans('', '', string.punctuation))
     words = clean_text.lower().split()
@@ -14,7 +14,7 @@ def word_count(text):
     return counts
 
 
-def top_k(text, k):
+def top_k(text: str, k: int) -> list[tuple[str, int]]:
     """Return the top k words sorted by descending count, then alphabetically."""
     counts = word_count(text)
     sorted_items = sorted(counts.items(), key=lambda x: (-x[1], x[0]))

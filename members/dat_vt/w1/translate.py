@@ -7,7 +7,7 @@ with (low + high) // 2.
 """
 
 
-def binary_search(a, key):
+def binary_search(a: list[int], key: int) -> int:
     """Return the index of key in sorted list a, or -1 if not found."""
     low, high = 0, len(a) - 1
     while low <= high:
