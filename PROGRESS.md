@@ -1,5 +1,23 @@
 # Python bootcamp progress
 
+## Minh Week 3 submission (2026-10-27)
+
+| Member | Issue | Branch / PR | Reviewer | Local verification | Estimated / actual student hours |
+|---|---|---|---|---|---|
+| MikaelVo639 (`minh_vg`) | [#48](https://github.com/Rokieroo/python-bootcamp-group04/issues/48) | [PR #57](https://github.com/Rokieroo/python-bootcamp-group04/pull/57), `py/w3-MikaelVo639` | hdang-207; review requested, human approval pending | W3: 3 passed; W1/W2/W3: 11 passed; CI student suite: 141 passed and 1,543 graph subtests; Ruff clean | Not supplied / not supplied |
+
+- W3-1 to W3-4 implemented, including 32 additional behavioral tests and missing
+  annotations/docstrings in Minh's existing exercises.
+- Required review of Thang's W3 and suggested team reviews remain pending:
+  no matching PR was open at the 2026-10-27 submission check.
+- Full repository verification exposes existing failures on unchanged main:
+  default pytest has five W2 collection/import errors; with importlib mode,
+  Man's empty-title CSV test and Dat's median-rounding peer test fail.
+  See `docs/week3-minh-submission.md` for exact commands and baseline evidence.
+- AI use: OpenAI Codex with Superpowers drafted code, tests and submission
+  materials and ran verification. Personal student review and effort hours
+  are not claimed. Merge, human approval and the weekly tag remain pending.
+
 ## Current verified status (2026-10-23, main `6691dc3`)
 
 - PR #27 is merged into main; the shared contract, four modules and revised CI
