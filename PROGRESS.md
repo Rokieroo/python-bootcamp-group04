@@ -1,5 +1,11 @@
 # Python bootcamp progress
 
+## Week 3
+
+| Week | Member | Issue | PR | Reviewer | Local verification | Estimated hours | Actual hours |
+|---|---|---|---|---|---|---|---|
+| 3 | Rokieroo (`dat_vt`) | [#43](https://github.com/MorganConsort/python-bootcamp-group04/issues/43) | [#55](https://github.com/MorganConsort/python-bootcamp-group04/pull/55) | Review requested; approval pending | W3-1 `parse_due`, W3-2 `p95`/`analyse`, W3-3 CLI and W3-4 docstrings/type hints complete; instructor W1+W3 tests and Ruff pass | Not supplied | Not supplied |
+
 ## Current verified status (2026-10-23, main `6691dc3`)
 
 - PR #27 is merged into main; the shared contract, four modules and revised CI
