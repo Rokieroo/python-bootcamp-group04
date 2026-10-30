@@ -5,6 +5,7 @@
 | Week | Member | Issue | PR | Reviewer | Local verification | Estimated hours | Actual hours |
 |---|---|---|---|---|---|---|---|
 | 3 | Rokieroo (`dat_vt`) | [#43](https://github.com/MorganConsort/python-bootcamp-group04/issues/43) | [#55](https://github.com/MorganConsort/python-bootcamp-group04/pull/55) | Review requested; approval pending | W3-1 `parse_due`, W3-2 `p95`/`analyse`, W3-3 CLI and W3-4 docstrings/type hints complete; instructor W1+W3 tests and Ruff pass | 2h | 2h30m |
+| 3 | thinh-nguyen-007 (`thinh_nq`) | [#45](https://github.com/MorganConsort/python-bootcamp-group04/issues/45) | [#61](https://github.com/Rokieroo/python-bootcamp-group04/pull/61) | tranquyetthang27 (requested); reviewed LePhanDucMan-pa (#60 approved) | W3-1 `parse_due`, W3-2 `p95`/`analyse`, W3-3 CLI and W3-4 clean code; instructor tests and Ruff pass | 2h | 2h |
 ## Minh Week 3 submission (2026-10-27)
 
 | Member | Issue | Branch / PR | Reviewer | Local verification | Estimated / actual student hours |
