@@ -1,9 +1,11 @@
 def  can_register_thesis(credits: int, gpa: float) -> bool:
+    """Check the minimum credit and GPA requirements for thesis registration."""
     if credits < 120:
         return False
     return not gpa < 2.0
 
-def  missing(credits, gpa) -> list[str]:
+def  missing(credits: int, gpa: float) -> list[str]:
+    """Describe which thesis-registration requirements remain unmet."""
     miss = []
     if credits < 120:
         crenum = 120 - credits

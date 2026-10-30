@@ -2,6 +2,7 @@ from .models import Task
 
 
 class InfeasiblePlan(Exception):
+    """Describe a plan whose required effort exceeds the available time."""
     needed_h: float
     available_h: float
 
@@ -11,6 +12,7 @@ class InfeasiblePlan(Exception):
         super().__init__(needed_h, available_h)
 
     def __str__(self) -> str:
+        """Show the required and available hours."""
         return f"Needed {self.needed_h}h but only {self.available_h}h available"
 
 

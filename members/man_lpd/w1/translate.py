@@ -7,7 +7,7 @@ Also, Python lists are dynamic and do not require size management.
 """
 
 
-def insertion_sort(a):
+def insertion_sort(a: list[int]) -> list[int]:
     """Sort a list of integers in-place using insertion sort and return it."""
     for i in range(1, len(a)):
         key = a[i]
@@ -20,7 +20,7 @@ def insertion_sort(a):
 
 
 # Keep the original binary_search for reference
-def binary_search(a, key):
+def binary_search(a: list[int], key: int) -> int:
     """Return the index of key in sorted list a, or -1 if not found.
 
     Difference from C++:
