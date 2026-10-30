@@ -15,6 +15,7 @@ class Task:
     deadline: date
 
     def __post_init__(self) -> None:
+        """Reject out-of-range importance and invalid effort values."""
         if not 1 <= self.importance <= 5:
             raise ValueError("importance must be 1-5")
         if not isfinite(self.effort_h) or self.effort_h < 0:
