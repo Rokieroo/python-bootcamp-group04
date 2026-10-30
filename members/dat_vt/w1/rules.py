@@ -1,12 +1,12 @@
 """W1-3: Thesis eligibility rules."""
 
 
-def can_register_thesis(credits, gpa):
+def can_register_thesis(credits: int, gpa: float) -> bool:
     """Return True if credits >= 120 and gpa >= 2.0."""
     return credits >= 120 and gpa >= 2.0
 
 
-def missing(credits, gpa):
+def missing(credits: int, gpa: float) -> list[str]:
     """Return a list of human-readable reasons for unmet requirements."""
     reasons = []
     if credits < 120:
