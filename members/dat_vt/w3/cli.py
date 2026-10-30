@@ -8,6 +8,7 @@ from members.dat_vt.w2.io_utils import load_tasks
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """Build the argument parser for the CSV path, --hours and --today options."""
     parser = argparse.ArgumentParser(description="Plan tonight's study session.")
     parser.add_argument("csv", help="path to the tasks CSV")
     parser.add_argument("--hours", type=float, required=True, help="hours available")
@@ -17,6 +18,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Print tonight's plan for argv (default: sys.argv); return 0 on success, 1 on bad input."""
     args = build_parser().parse_args(argv)
     try:
         tasks = load_tasks(args.csv)
